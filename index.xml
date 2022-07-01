@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Vangelis Katsikaros</title>
+    <link>https://vkatsikaros.com/</link>
+    <description>Recent content on Vangelis Katsikaros</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://vkatsikaros.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>About</title>
+      <link>https://vkatsikaros.com/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vkatsikaros.com/about/</guid>
+      <description>About Hi! My name is Vangelis and I am a software engineer in Athens, Greece. Currently, I have the pleasure to be Head of Infrastructure in Adzuna. I&amp;rsquo;ve spent most of my career with web crawling, DBs and backend systems. I like solving business as well as system performance and reliability problems. My web crawling adventures got me involved with the Webdriver W3C spec. Sometimes I give talks.</description>
+    </item>
+    
+    <item>
+      <title>Talks</title>
+      <link>https://vkatsikaros.com/talks/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vkatsikaros.com/talks/</guid>
+      <description>Talks Information technology &amp;amp; the job market Invited lecture that reached ~400 students in 7 Computer Science university departments and 1 career day.
+Abstract The job market is not transparent. What does a computer science student need to know to be prepared for their first career choices? Salary trends will be analysed, both generally and specifically for the information technology sector. Useful steps that could be performed during studies will be presented.</description>
+    </item>
+    
+  </channel>
+</rss>
