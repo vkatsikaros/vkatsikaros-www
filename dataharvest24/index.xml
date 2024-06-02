@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Vangelis Katsikaros</title>
+    <link>https://vkatsikaros.com/dataharvest24/</link>
+    <description>Recent content on Vangelis Katsikaros</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://vkatsikaros.com/dataharvest24/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>https://vkatsikaros.com/dataharvest24/main/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vkatsikaros.com/dataharvest24/main/</guid>
+      <description>Dataharvest 2024 I give you a URL and you give me back LEGO bricks - OR - How to use an LLM to write your first scraper Workshop at Dataharvest 2024, 2024/Jun/01
+Participants will write a simple web scraper in python. A Large Language Models (LLM) will be used as a coding assistant to write the scraper’s skeleton and help participants overcome obstacles. Participants will also learn that LLMs, can’t be trusted blindly: judgment and domain expertise are needed to navigate the LLM’s answers.</description>
+    </item>
+    
+    <item>
+      <title>Browser dev tools - inspect element</title>
+      <link>https://vkatsikaros.com/dataharvest24/devtools3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vkatsikaros.com/dataharvest24/devtools3/</guid>
+      <description>Browser dev tools Inspect an element ⇦ dev tools 2 Index question 3 ⇨ </description>
+    </item>
+    
+    <item>
+      <title>Browser dev tools - launch</title>
+      <link>https://vkatsikaros.com/dataharvest24/devtools1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vkatsikaros.com/dataharvest24/devtools1/</guid>
+      <description>Browser dev tools Launch dev tools ⇦ question 2a Index dev tools 2 ⇨ </description>
+    </item>
+    
+    <item>
+      <title>Browser dev tools - search element</title>
+      <link>https://vkatsikaros.com/dataharvest24/devtools2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vkatsikaros.com/dataharvest24/devtools2/</guid>
+      <description>Browser dev tools Search for an element ⇦ dev tools 1 Index dev tools 3 ⇨ </description>
+    </item>
+    
+    <item>
+      <title>Question 1</title>
+      <link>https://vkatsikaros.com/dataharvest24/question1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vkatsikaros.com/dataharvest24/question1/</guid>
+      <description>Question 1 Could you help me write a basic web scraper in python? import requests from bs4 import BeautifulSoup url = &amp;#39;https://example-blog.com&amp;#39; response = requests.get(url) if response.status_code == 200: soup = BeautifulSoup(response.content, &amp;#39;html.parser&amp;#39;) titles = soup.find_all(&amp;#39;h2&amp;#39;) for title in titles: print(title.get_text()) else: print(&amp;#39;Failed to retrieve the webpage. Status code:&amp;#39;, response.status_code) Oh that&amp;rsquo;s nice! Let&amp;rsquo;s copy paste this in Google Colab, and see if there are any syntax errors.
+Could you guess what we need to change in order to scrape the site we want (https://vkatsikaros.</description>
+    </item>
+    
+    <item>
+      <title>Question 10</title>
+      <link>https://vkatsikaros.com/dataharvest24/question10/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vkatsikaros.com/dataharvest24/question10/</guid>
+      <description>Question 10 Hm I get too many double quotes in the output. What is going on? import requests from bs4 import BeautifulSoup import csv import io url = &amp;#39;https://vkatsikaros.github.io/dataharvest24-www.github.io/&amp;#39; response = requests.get(url) if response.status_code == 200: soup = BeautifulSoup(response.content, &amp;#39;html.parser&amp;#39;) div = soup.find(&amp;#39;div&amp;#39;, id=&amp;#39;_idItemTableForP&amp;#39;) if div is not None: table = div.find(&amp;#39;table&amp;#39;) if table is not None: headers = [] thead = table.find(&amp;#39;thead&amp;#39;) if thead is not None: for th in thead.</description>
+    </item>
+    
+    <item>
+      <title>Question 11</title>
+      <link>https://vkatsikaros.com/dataharvest24/question11/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vkatsikaros.com/dataharvest24/question11/</guid>
+      <description>Question 11 Where, by accident, I ask the LLM gibberish &amp;ldquo;I found that if I replace this&amp;rdquo; and it replies with a corrected version of the code import requests from bs4 import BeautifulSoup import csv import io url = &amp;#39;https://vkatsikaros.github.io/dataharvest24-www.github.io/&amp;#39; response = requests.get(url) if response.status_code == 200: soup = BeautifulSoup(response.content, &amp;#39;html.parser&amp;#39;) div = soup.find(&amp;#39;div&amp;#39;, id=&amp;#39;_idItemTableForP&amp;#39;) if div is not None: table = div.find(&amp;#39;table&amp;#39;) if table is not None: headers = [] thead = table.</description>
+    </item>
+    
+    <item>
+      <title>Question 12</title>
+      <link>https://vkatsikaros.com/dataharvest24/question12/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vkatsikaros.com/dataharvest24/question12/</guid>
+      <description>Question 12 This is better. I want only the 4th and 5th element of each row import requests from bs4 import BeautifulSoup import csv import io url = &amp;#39;https://vkatsikaros.github.io/dataharvest24-www.github.io/&amp;#39; response = requests.get(url) if response.status_code == 200: soup = BeautifulSoup(response.content, &amp;#39;html.parser&amp;#39;) div = soup.find(&amp;#39;div&amp;#39;, id=&amp;#39;_idItemTableForP&amp;#39;) if div is not None: table = div.find(&amp;#39;table&amp;#39;) if table is not None: rows = [] tbody = table.find(&amp;#39;tbody&amp;#39;) if tbody is not None: for tr in tbody.</description>
+    </item>
+    
+    <item>
+      <title>Question 13</title>
+      <link>https://vkatsikaros.com/dataharvest24/question13/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vkatsikaros.com/dataharvest24/question13/</guid>
+      <description>Question 13 Oh! I just noticed I want to process only every second row. How do I do this? The
+import requests from bs4 import BeautifulSoup import csv import io url = &amp;#39;https://vkatsikaros.github.io/dataharvest24-www.github.io/&amp;#39; response = requests.get(url) if response.status_code == 200: soup = BeautifulSoup(response.content, &amp;#39;html.parser&amp;#39;) div = soup.find(&amp;#39;div&amp;#39;, id=&amp;#39;_idItemTableForP&amp;#39;) if div is not None: table = div.find(&amp;#39;table&amp;#39;) if table is not None: rows = [] tbody = table.find(&amp;#39;tbody&amp;#39;) if tbody is not None: row_index = 0 for tr in tbody.</description>
+    </item>
+    
+    <item>
+      <title>Question 14</title>
+      <link>https://vkatsikaros.com/dataharvest24/question14/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vkatsikaros.com/dataharvest24/question14/</guid>
+      <description>Question 14 That&amp;rsquo;s nice. In each row there is a second element that has a code in a element. Can you extract it? Example row &amp;lt;td rowspan=&amp;quot;2&amp;quot; width=&amp;quot;300px&amp;quot; class=&amp;quot;pspItemClick&amp;quot;&amp;gt;&amp;lt;a href=&amp;quot;/v2/catalog/catalogitem.page?P=3005&amp;amp;amp;name=Brick%201%20x%201&amp;amp;amp;category=%5BBrick%5D&amp;quot; class=&amp;quot;pspItemNameLink&amp;quot;&amp;gt;Brick 1 x 1&amp;lt;/a&amp;gt;&amp;lt;br&amp;gt;&amp;lt;span class=&amp;quot;pspItemCateAndNo&amp;quot;&amp;gt;&amp;lt;span class=&amp;quot;blcatList&amp;quot;&amp;gt;&amp;lt;a class=&amp;quot;_blcatLink&amp;quot; onclick=&amp;quot;&amp;quot; href=&amp;quot;//www.bricklink.com/catalogList.asp?catType=P&amp;amp;amp;catString=5&amp;quot;&amp;gt;Brick&amp;lt;/a&amp;gt;&amp;lt;/span&amp;gt; : 3005&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;pspPCC&amp;quot;&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/td&amp;gt;
+import requests from bs4 import BeautifulSoup import csv import io url = &amp;#39;https://vkatsikaros.github.io/dataharvest24-www.github.io/&amp;#39; response = requests.get(url) if response.status_code == 200: soup = BeautifulSoup(response.content, &amp;#39;html.parser&amp;#39;) div = soup.find(&amp;#39;div&amp;#39;, id=&amp;#39;_idItemTableForP&amp;#39;) if div is not None: table = div.</description>
+    </item>
+    
+    <item>
+      <title>Question 15</title>
+      <link>https://vkatsikaros.com/dataharvest24/question15/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vkatsikaros.com/dataharvest24/question15/</guid>
+      <description>Question 15 Oops I get a IndexError: list index out of range and I think you forgot the CSV printing code? import requests from bs4 import BeautifulSoup import csv import io url = &amp;#39;https://vkatsikaros.github.io/dataharvest24-www.github.io/&amp;#39; response = requests.get(url) if response.status_code == 200: soup = BeautifulSoup(response.content, &amp;#39;html.parser&amp;#39;) div = soup.find(&amp;#39;div&amp;#39;, id=&amp;#39;_idItemTableForP&amp;#39;) if div is not None: table = div.find(&amp;#39;table&amp;#39;) if table is not None: rows = [] tbody = table.find(&amp;#39;tbody&amp;#39;) if tbody is not None: for tr in tbody.</description>
+    </item>
+    
+    <item>
+      <title>Question 16</title>
+      <link>https://vkatsikaros.com/dataharvest24/question16/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vkatsikaros.com/dataharvest24/question16/</guid>
+      <description>Question (Step) 16 Instead of asking the LLM another question I returned to question 13 where the output was good enough. This is the HTML code that interests us:
+&amp;lt;td rowspan=&amp;#34;2&amp;#34; width=&amp;#34;300px&amp;#34; class=&amp;#34;pspItemClick&amp;#34;&amp;gt; &amp;lt;a href=&amp;#34;/v2/catalog/catalogitem.page?P=3005&amp;amp;amp;name=Brick%201%20x%201&amp;amp;amp;category=%5BBrick%5D&amp;#34; class=&amp;#34;pspItemNameLink&amp;#34;&amp;gt;Brick 1 x 1&amp;lt;/a&amp;gt; &amp;lt;br&amp;gt; &amp;lt;span class=&amp;#34;pspItemCateAndNo&amp;#34;&amp;gt; &amp;lt;span class=&amp;#34;blcatList&amp;#34;&amp;gt; &amp;lt;a class=&amp;#34;_blcatLink&amp;#34; onclick=&amp;#34;&amp;#34; href=&amp;#34;//www.bricklink.com/catalogList.asp?catType=P&amp;amp;amp;catString=5&amp;#34;&amp;gt;Brick&amp;lt;/a&amp;gt; &amp;lt;/span&amp;gt; : 3005 &amp;lt;/span&amp;gt; &amp;lt;span class=&amp;#34;pspPCC&amp;#34;&amp;gt; &amp;lt;/span&amp;gt; &amp;lt;/td&amp;gt; At this stage I decided not to ask help from the LLM. I learned enough about code that selects elements, and I am confident I can copy/paste and modify code, in order to do what I want.</description>
+    </item>
+    
+    <item>
+      <title>Question 2</title>
+      <link>https://vkatsikaros.com/dataharvest24/question2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vkatsikaros.com/dataharvest24/question2/</guid>
+      <description>Question 2 I am trying to scrape the url https://vkatsikaros.github.io/dataharvest24-www.github.io/ what should I change? import requests from bs4 import BeautifulSoup url = &amp;#39;https://vkatsikaros.github.io/dataharvest24-www.github.io/&amp;#39; response = requests.get(url) if response.status_code == 200: soup = BeautifulSoup(response.content, &amp;#39;html.parser&amp;#39;) titles = soup.find_all(&amp;#39;h2&amp;#39;) for title in titles: print(title.get_text()) else: print(&amp;#39;Failed to retrieve the webpage. Status code:&amp;#39;, response.status_code) The diff:
+import requests from bs4 import BeautifulSoup -url = &amp;#39;https://example-blog.com&amp;#39; +url = &amp;#39;https://vkatsikaros.github.io/dataharvest24-www.github.io/&amp;#39; response = requests.get(url) Output:
+Hm, it&amp;rsquo;s empty.</description>
+    </item>
+    
+    <item>
+      <title>Question 2</title>
+      <link>https://vkatsikaros.com/dataharvest24/question2a/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vkatsikaros.com/dataharvest24/question2a/</guid>
+      <description>Question 2 &amp;hellip;continued: Let&amp;rsquo;s add some debugging import requests from bs4 import BeautifulSoup url = &amp;#39;https://vkatsikaros.github.io/dataharvest24-www.github.io/&amp;#39; response = requests.get(url) if response.status_code == 200: print(&amp;#39;Retrieving the webpage. Status code:&amp;#39;, response.status_code) soup = BeautifulSoup(response.content, &amp;#39;html.parser&amp;#39;) titles = soup.find_all(&amp;#39;h2&amp;#39;) for title in titles: print(title.get_text()) else: print(&amp;#39;Failed to retrieve the webpage. Status code:&amp;#39;, response.status_code) The diff. Adding &amp;ldquo;poor man&amp;rsquo;s&amp;rdquo; debugging:
+if response.status_code == 200: + print(&amp;#39;Retrieving the webpage. Status code:&amp;#39;, response.status_code) soup = BeautifulSoup(response.content, &amp;#39;html.</description>
+    </item>
+    
+    <item>
+      <title>Question 3</title>
+      <link>https://vkatsikaros.com/dataharvest24/question3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vkatsikaros.com/dataharvest24/question3/</guid>
+      <description>Question 3 I would like to isolate one table from the webpage, how do I do this? import requests from bs4 import BeautifulSoup url = &amp;#39;https://vkatsikaros.github.io/dataharvest24-www.github.io/&amp;#39; response = requests.get(url) if response.status_code == 200: soup = BeautifulSoup(response.content, &amp;#39;html.parser&amp;#39;) table = soup.find(&amp;#39;table&amp;#39;, id=&amp;#39;target-table&amp;#39;) # Use id or class as necessary headers = [] for th in table.find(&amp;#39;thead&amp;#39;).find_all(&amp;#39;th&amp;#39;): headers.append(th.text.strip()) rows = [] for tr in table.find(&amp;#39;tbody&amp;#39;).find_all(&amp;#39;tr&amp;#39;): cells = [td.text.strip() for td in tr.find_all(&amp;#39;td&amp;#39;)] rows.</description>
+    </item>
+    
+    <item>
+      <title>Question 4</title>
+      <link>https://vkatsikaros.com/dataharvest24/question4/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vkatsikaros.com/dataharvest24/question4/</guid>
+      <description>Question 4 Hm, I get an error AttributeError: &#39;NoneType&#39; object has no attribute &#39;find&#39; import requests from bs4 import BeautifulSoup url = &amp;#39;https://vkatsikaros.github.io/dataharvest24-www.github.io/&amp;#39; response = requests.get(url) if response.status_code == 200: soup = BeautifulSoup(response.content, &amp;#39;html.parser&amp;#39;) table = soup.find(&amp;#39;table&amp;#39;, id=&amp;#39;target-table&amp;#39;) # Adjust this line based on your table&amp;#39;s actual identifier if table is not None: headers = [] for th in table.find(&amp;#39;thead&amp;#39;).find_all(&amp;#39;th&amp;#39;): headers.append(th.text.strip()) rows = [] for tr in table.find(&amp;#39;tbody&amp;#39;).find_all(&amp;#39;tr&amp;#39;): cells = [td.</description>
+    </item>
+    
+    <item>
+      <title>Question 5</title>
+      <link>https://vkatsikaros.com/dataharvest24/question5/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vkatsikaros.com/dataharvest24/question5/</guid>
+      <description>Question 5 I noticed the table does not have an identifier. However the table I want is in a div that has the identifier id=&amp;quot;_idItemTableForP&amp;quot; Would this help? import requests from bs4 import BeautifulSoup url = &amp;#39;https://vkatsikaros.github.io/dataharvest24-www.github.io/&amp;#39; response = requests.get(url) if response.status_code == 200: soup = BeautifulSoup(response.content, &amp;#39;html.parser&amp;#39;) div = soup.find(&amp;#39;div&amp;#39;, id=&amp;#39;_idItemTableForP&amp;#39;) if div is not None: table = div.find(&amp;#39;table&amp;#39;) if table is not None: headers = [] for th in table.</description>
+    </item>
+    
+    <item>
+      <title>Question 6</title>
+      <link>https://vkatsikaros.com/dataharvest24/question6/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vkatsikaros.com/dataharvest24/question6/</guid>
+      <description>Question 6 Hm I now get the error AttributeError: &#39;NoneType&#39; object has no attribute &#39;find_all&#39; import requests from bs4 import BeautifulSoup url = &amp;#39;https://vkatsikaros.github.io/dataharvest24-www.github.io/&amp;#39; response = requests.get(url) if response.status_code == 200: soup = BeautifulSoup(response.content, &amp;#39;html.parser&amp;#39;) div = soup.find(&amp;#39;div&amp;#39;, id=&amp;#39;_idItemTableForP&amp;#39;) if div is not None: table = div.find(&amp;#39;table&amp;#39;) if table is not None: headers = [] thead = table.find(&amp;#39;thead&amp;#39;) if thead is not None: for th in thead.find_all(&amp;#39;th&amp;#39;): headers.append(th.text.strip()) else: print(&amp;#34;Thead not found in the table.</description>
+    </item>
+    
+    <item>
+      <title>Question 7</title>
+      <link>https://vkatsikaros.com/dataharvest24/question7/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vkatsikaros.com/dataharvest24/question7/</guid>
+      <description>Question 7 Nice, I get results now. An example row looks like this &amp;lt;td rowspan=&amp;quot;2&amp;quot; width=&amp;quot;300px&amp;quot; class=&amp;quot;pspItemClick&amp;quot;&amp;gt;&amp;lt;a href=&amp;quot;/v2/catalog/catalogitem.page?P=3005&amp;amp;amp;name=Brick%201%20x%201&amp;amp;amp;category=%5BBrick%5D&amp;quot; class=&amp;quot;pspItemNameLink&amp;quot;&amp;gt;Brick 1 x 1&amp;lt;/a&amp;gt;&amp;lt;br&amp;gt;&amp;lt;span class=&amp;quot;pspItemCateAndNo&amp;quot;&amp;gt;&amp;lt;span class=&amp;quot;blcatList&amp;quot;&amp;gt;&amp;lt;a class=&amp;quot;_blcatLink&amp;quot; onclick=&amp;quot;&amp;quot; href=&amp;quot;//www.bricklink.com/catalogList.asp?catType=P&amp;amp;amp;catString=5&amp;quot;&amp;gt;Brick&amp;lt;/a&amp;gt;&amp;lt;/span&amp;gt; : 3005&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;pspPCC&amp;quot;&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/td&amp;gt; I would like to isolate the url and the text of the url. Is this possible? import requests from bs4 import BeautifulSoup url = &amp;#39;https://vkatsikaros.github.io/dataharvest24-www.github.io/&amp;#39; response = requests.get(url) if response.status_code == 200: soup = BeautifulSoup(response.content, &amp;#39;html.parser&amp;#39;) div = soup.find(&amp;#39;div&amp;#39;, id=&amp;#39;_idItemTableForP&amp;#39;) if div is not None: table = div.</description>
+    </item>
+    
+    <item>
+      <title>Question 8</title>
+      <link>https://vkatsikaros.com/dataharvest24/question8/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vkatsikaros.com/dataharvest24/question8/</guid>
+      <description>Question 8 Hm I get KeyError: &#39;href&#39; import requests from bs4 import BeautifulSoup url = &amp;#39;https://vkatsikaros.github.io/dataharvest24-www.github.io/&amp;#39; response = requests.get(url) if response.status_code == 200: soup = BeautifulSoup(response.content, &amp;#39;html.parser&amp;#39;) div = soup.find(&amp;#39;div&amp;#39;, id=&amp;#39;_idItemTableForP&amp;#39;) if div is not None: table = div.find(&amp;#39;table&amp;#39;) if table is not None: headers = [] thead = table.find(&amp;#39;thead&amp;#39;) if thead is not None: for th in thead.find_all(&amp;#39;th&amp;#39;): headers.append(th.text.strip()) else: print(&amp;#34;Thead not found in the table.&amp;#34;) rows = [] tbody = table.</description>
+    </item>
+    
+    <item>
+      <title>Question 9</title>
+      <link>https://vkatsikaros.com/dataharvest24/question9/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vkatsikaros.com/dataharvest24/question9/</guid>
+      <description>Question 9 That&amp;rsquo;s better. Is it possible to print the output in comma separated format? import requests from bs4 import BeautifulSoup import csv import io url = &amp;#39;https://vkatsikaros.github.io/dataharvest24-www.github.io/&amp;#39; response = requests.get(url) if response.status_code == 200: soup = BeautifulSoup(response.content, &amp;#39;html.parser&amp;#39;) div = soup.find(&amp;#39;div&amp;#39;, id=&amp;#39;_idItemTableForP&amp;#39;) if div is not None: table = div.find(&amp;#39;table&amp;#39;) if table is not None: headers = [] thead = table.find(&amp;#39;thead&amp;#39;) if thead is not None: for th in thead.</description>
+    </item>
+    
+  </channel>
+</rss>
