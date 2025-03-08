@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Question 13 | Vangelis Katsikaros</title>
+<meta name="title" content="Question 13" />
+<meta name="description" content="Question 13
+Oh! I just noticed I want to process only every second row. How do I do this?
+The
+import requests
+from bs4 import BeautifulSoup
+import csv
+import io
+
+url = &#39;https://vkatsikaros.github.io/dataharvest24-www.github.io/&#39;
+response = requests.get(url)
+
+if response.status_code == 200:
+    soup = BeautifulSoup(response.content, &#39;html.parser&#39;)
+    div = soup.find(&#39;div&#39;, id=&#39;_idItemTableForP&#39;)
+    if div is not None:
+        table = div.find(&#39;table&#39;)
+
+        if table is not None:
+
+            rows = []
+            tbody = table.find(&#39;tbody&#39;)
+            if tbody is not None:
+                row_index = 0
+                for tr in tbody.find_all(&#39;tr&#39;):
+                    if row_index % 2 == 1:
+                        row_data = []
+                        for td in tr.find_all(&#39;td&#39;):
+                            # Find the &lt;a&gt; tag within the &lt;td&gt;
+                            a_tag = td.find(&#39;a&#39;)
+                            if a_tag is not None:
+                                url = a_tag.get(&#39;href&#39;, None)  # Use get to avoid KeyError
+                                text = a_tag.text.strip()
+                                row_data.append(url)
+                                row_data.append(text)
+                            else:
+                                row_data.append(td.text.strip())
+                        rows.append(row_data[3:5])
+                    row_index &#43;= 1
+            else:
+                print(&#34;Tbody not found in the table.&#34;)
+
+            output = io.StringIO()
+            csv_writer = csv.writer(output)
+            
+            for row in rows:
+                csv_writer.writerow(row)
+
+            csv_content = output.getvalue()
+            print(csv_content)
+        else:
+            print(&#34;Table not found within the div. Check the structure.&#34;)
+    else:
+        print(&#34;Div with id &#39;_idItemTableForP&#39; not found. Check the id.&#34;)
+else:
+    print(&#39;Failed to retrieve the webpage. Status code:&#39;, response.status_code)
+The diff:" />
+<meta name="keywords" content="" />
+
+
+<meta property="og:url" content="https://vkatsikaros.com/dataharvest24/question13/">
+  <meta property="og:site_name" content="Vangelis Katsikaros">
+  <meta property="og:title" content="Question 13">
+  <meta property="og:description" content="Question 13 Oh! I just noticed I want to process only every second row. How do I do this? The
+import requests from bs4 import BeautifulSoup import csv import io url = &#39;https://vkatsikaros.github.io/dataharvest24-www.github.io/&#39; response = requests.get(url) if response.status_code == 200: soup = BeautifulSoup(response.content, &#39;html.parser&#39;) div = soup.find(&#39;div&#39;, id=&#39;_idItemTableForP&#39;) if div is not None: table = div.find(&#39;table&#39;) if table is not None: rows = [] tbody = table.find(&#39;tbody&#39;) if tbody is not None: row_index = 0 for tr in tbody.find_all(&#39;tr&#39;): if row_index % 2 == 1: row_data = [] for td in tr.find_all(&#39;td&#39;): # Find the &lt;a&gt; tag within the &lt;td&gt; a_tag = td.find(&#39;a&#39;) if a_tag is not None: url = a_tag.get(&#39;href&#39;, None) # Use get to avoid KeyError text = a_tag.text.strip() row_data.append(url) row_data.append(text) else: row_data.append(td.text.strip()) rows.append(row_data[3:5]) row_index &#43;= 1 else: print(&#34;Tbody not found in the table.&#34;) output = io.StringIO() csv_writer = csv.writer(output) for row in rows: csv_writer.writerow(row) csv_content = output.getvalue() print(csv_content) else: print(&#34;Table not found within the div. Check the structure.&#34;) else: print(&#34;Div with id &#39;_idItemTableForP&#39; not found. Check the id.&#34;) else: print(&#39;Failed to retrieve the webpage. Status code:&#39;, response.status_code) The diff:">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="dataharvest24">
+
+
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Question 13">
+  <meta name="twitter:description" content="Question 13 Oh! I just noticed I want to process only every second row. How do I do this? The
+import requests from bs4 import BeautifulSoup import csv import io url = &#39;https://vkatsikaros.github.io/dataharvest24-www.github.io/&#39; response = requests.get(url) if response.status_code == 200: soup = BeautifulSoup(response.content, &#39;html.parser&#39;) div = soup.find(&#39;div&#39;, id=&#39;_idItemTableForP&#39;) if div is not None: table = div.find(&#39;table&#39;) if table is not None: rows = [] tbody = table.find(&#39;tbody&#39;) if tbody is not None: row_index = 0 for tr in tbody.find_all(&#39;tr&#39;): if row_index % 2 == 1: row_data = [] for td in tr.find_all(&#39;td&#39;): # Find the &lt;a&gt; tag within the &lt;td&gt; a_tag = td.find(&#39;a&#39;) if a_tag is not None: url = a_tag.get(&#39;href&#39;, None) # Use get to avoid KeyError text = a_tag.text.strip() row_data.append(url) row_data.append(text) else: row_data.append(td.text.strip()) rows.append(row_data[3:5]) row_index &#43;= 1 else: print(&#34;Tbody not found in the table.&#34;) output = io.StringIO() csv_writer = csv.writer(output) for row in rows: csv_writer.writerow(row) csv_content = output.getvalue() print(csv_content) else: print(&#34;Table not found within the div. Check the structure.&#34;) else: print(&#34;Div with id &#39;_idItemTableForP&#39; not found. Check the id.&#34;) else: print(&#39;Failed to retrieve the webpage. Status code:&#39;, response.status_code) The diff:">
+
+
+
+
+  <meta itemprop="name" content="Question 13">
+  <meta itemprop="description" content="Question 13 Oh! I just noticed I want to process only every second row. How do I do this? The
+import requests from bs4 import BeautifulSoup import csv import io url = &#39;https://vkatsikaros.github.io/dataharvest24-www.github.io/&#39; response = requests.get(url) if response.status_code == 200: soup = BeautifulSoup(response.content, &#39;html.parser&#39;) div = soup.find(&#39;div&#39;, id=&#39;_idItemTableForP&#39;) if div is not None: table = div.find(&#39;table&#39;) if table is not None: rows = [] tbody = table.find(&#39;tbody&#39;) if tbody is not None: row_index = 0 for tr in tbody.find_all(&#39;tr&#39;): if row_index % 2 == 1: row_data = [] for td in tr.find_all(&#39;td&#39;): # Find the &lt;a&gt; tag within the &lt;td&gt; a_tag = td.find(&#39;a&#39;) if a_tag is not None: url = a_tag.get(&#39;href&#39;, None) # Use get to avoid KeyError text = a_tag.text.strip() row_data.append(url) row_data.append(text) else: row_data.append(td.text.strip()) rows.append(row_data[3:5]) row_index &#43;= 1 else: print(&#34;Tbody not found in the table.&#34;) output = io.StringIO() csv_writer = csv.writer(output) for row in rows: csv_writer.writerow(row) csv_content = output.getvalue() print(csv_content) else: print(&#34;Table not found within the div. Check the structure.&#34;) else: print(&#34;Div with id &#39;_idItemTableForP&#39; not found. Check the id.&#34;) else: print(&#39;Failed to retrieve the webpage. Status code:&#39;, response.status_code) The diff:">
+  <meta itemprop="wordCount" content="407">
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  <style>
+  body {
+    font-family: Verdana, sans-serif;
+    margin: auto;
+    padding: 20px;
+    max-width: 720px;
+    text-align: left;
+    background-color: #fff;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    color: #444;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  strong,
+  b {
+    color: #222;
+  }
+
+  a {
+    color: #3273dc;
+     
+  }
+
+  .title {
+    text-decoration: none;
+    border: 0;
+  }
+
+  .title span {
+    font-weight: 400;
+  }
+
+  nav a {
+    margin-right: 10px;
+  }
+
+  textarea {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  input {
+    font-size: 16px;
+  }
+
+  content {
+    line-height: 1.6;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  code {
+    padding: 2px 5px;
+    background-color: #f2f2f2;
+  }
+
+  pre code {
+    color: #222;
+    display: block;
+    padding: 20px;
+    white-space: pre-wrap;
+    font-size: 14px;
+    overflow-x: auto;
+  }
+
+  div.highlight pre {
+    background-color: initial;
+    color: initial;
+  }
+
+  div.highlight code {
+    background-color: unset;
+    color: unset;
+  }
+
+  blockquote {
+    border-left: 1px solid #999;
+    color: #222;
+    padding-left: 20px;
+    font-style: italic;
+  }
+
+  footer {
+    color: rgb(181, 181, 181);
+    padding: 25px;
+    text-align: center;
+  }
+
+  footer a {
+    color: rgb(181, 181, 181);
+  }
+
+  .helptext {
+    color: #777;
+    font-size: small;
+  }
+
+  .errorlist {
+    color: #eba613;
+    font-size: small;
+  }
+
+   
+  ul.blog-posts {
+    list-style-type: none;
+    padding: unset;
+  }
+
+  ul.blog-posts li {
+    display: flex;
+  }
+
+  ul.blog-posts li span {
+    flex: 0 0 130px;
+  }
+
+  ul.blog-posts li a:visited {
+    color: #8b6fcb;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body {
+      background-color: #333;
+      color: #ddd;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    strong,
+    b {
+      color: #eee;
+    }
+
+    a {
+      color: #8cc2dd;
+    }
+
+    code {
+      background-color: #777;
+    }
+
+    pre code {
+      color: #ddd;
+    }
+
+    blockquote {
+      color: #ccc;
+    }
+
+    textarea,
+    input {
+      background-color: #252525;
+      color: #ddd;
+    }
+
+    .helptext {
+      color: #aaa;
+    }
+  }
+
+</style>
+
+</head>
+
+<body>
+  <header><a href="/" class="title">
+  <h2>Vangelis Katsikaros</h2>
+</a>
+<nav>
+<a href="/about/">About</a>
+
+<a href="/talks/">Talks</a>
+
+<a href="https://github.com/vkatsikaros">GitHub</a>
+
+<a href="https://vangelisbricks.com/">LEGO</a>
+
+
+</nav>
+</header>
+  <main>
+
+<content>
+  <h2 id="question-13">Question 13</h2>
+<h3 id="oh-i-just-noticed-i-want-to-process-only-every-second-row-how-do-i-do-this">Oh! I just noticed I want to process only every second row. How do I do this?</h3>
+<p>The</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> requests
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> bs4 <span style="color:#f92672">import</span> BeautifulSoup
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> csv
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> io
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;https://vkatsikaros.github.io/dataharvest24-www.github.io/&#39;</span>
+</span></span><span style="display:flex;"><span>response <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>get(url)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> response<span style="color:#f92672">.</span>status_code <span style="color:#f92672">==</span> <span style="color:#ae81ff">200</span>:
+</span></span><span style="display:flex;"><span>    soup <span style="color:#f92672">=</span> BeautifulSoup(response<span style="color:#f92672">.</span>content, <span style="color:#e6db74">&#39;html.parser&#39;</span>)
+</span></span><span style="display:flex;"><span>    div <span style="color:#f92672">=</span> soup<span style="color:#f92672">.</span>find(<span style="color:#e6db74">&#39;div&#39;</span>, id<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;_idItemTableForP&#39;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> div <span style="color:#f92672">is</span> <span style="color:#f92672">not</span> <span style="color:#66d9ef">None</span>:
+</span></span><span style="display:flex;"><span>        table <span style="color:#f92672">=</span> div<span style="color:#f92672">.</span>find(<span style="color:#e6db74">&#39;table&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> table <span style="color:#f92672">is</span> <span style="color:#f92672">not</span> <span style="color:#66d9ef">None</span>:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            rows <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>            tbody <span style="color:#f92672">=</span> table<span style="color:#f92672">.</span>find(<span style="color:#e6db74">&#39;tbody&#39;</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> tbody <span style="color:#f92672">is</span> <span style="color:#f92672">not</span> <span style="color:#66d9ef">None</span>:
+</span></span><span style="display:flex;"><span>                row_index <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">for</span> tr <span style="color:#f92672">in</span> tbody<span style="color:#f92672">.</span>find_all(<span style="color:#e6db74">&#39;tr&#39;</span>):
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">if</span> row_index <span style="color:#f92672">%</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>:
+</span></span><span style="display:flex;"><span>                        row_data <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>                        <span style="color:#66d9ef">for</span> td <span style="color:#f92672">in</span> tr<span style="color:#f92672">.</span>find_all(<span style="color:#e6db74">&#39;td&#39;</span>):
+</span></span><span style="display:flex;"><span>                            <span style="color:#75715e"># Find the &lt;a&gt; tag within the &lt;td&gt;</span>
+</span></span><span style="display:flex;"><span>                            a_tag <span style="color:#f92672">=</span> td<span style="color:#f92672">.</span>find(<span style="color:#e6db74">&#39;a&#39;</span>)
+</span></span><span style="display:flex;"><span>                            <span style="color:#66d9ef">if</span> a_tag <span style="color:#f92672">is</span> <span style="color:#f92672">not</span> <span style="color:#66d9ef">None</span>:
+</span></span><span style="display:flex;"><span>                                url <span style="color:#f92672">=</span> a_tag<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;href&#39;</span>, <span style="color:#66d9ef">None</span>)  <span style="color:#75715e"># Use get to avoid KeyError</span>
+</span></span><span style="display:flex;"><span>                                text <span style="color:#f92672">=</span> a_tag<span style="color:#f92672">.</span>text<span style="color:#f92672">.</span>strip()
+</span></span><span style="display:flex;"><span>                                row_data<span style="color:#f92672">.</span>append(url)
+</span></span><span style="display:flex;"><span>                                row_data<span style="color:#f92672">.</span>append(text)
+</span></span><span style="display:flex;"><span>                            <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>                                row_data<span style="color:#f92672">.</span>append(td<span style="color:#f92672">.</span>text<span style="color:#f92672">.</span>strip())
+</span></span><span style="display:flex;"><span>                        rows<span style="color:#f92672">.</span>append(row_data[<span style="color:#ae81ff">3</span>:<span style="color:#ae81ff">5</span>])
+</span></span><span style="display:flex;"><span>                    row_index <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>                print(<span style="color:#e6db74">&#34;Tbody not found in the table.&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            output <span style="color:#f92672">=</span> io<span style="color:#f92672">.</span>StringIO()
+</span></span><span style="display:flex;"><span>            csv_writer <span style="color:#f92672">=</span> csv<span style="color:#f92672">.</span>writer(output)
+</span></span><span style="display:flex;"><span>            
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">for</span> row <span style="color:#f92672">in</span> rows:
+</span></span><span style="display:flex;"><span>                csv_writer<span style="color:#f92672">.</span>writerow(row)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            csv_content <span style="color:#f92672">=</span> output<span style="color:#f92672">.</span>getvalue()
+</span></span><span style="display:flex;"><span>            print(csv_content)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>            print(<span style="color:#e6db74">&#34;Table not found within the div. Check the structure.&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">&#34;Div with id &#39;_idItemTableForP&#39; not found. Check the id.&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#39;Failed to retrieve the webpage. Status code:&#39;</span>, response<span style="color:#f92672">.</span>status_code)
+</span></span></code></pre></div><p>The diff:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-diff" data-lang="diff"><span style="display:flex;"><span>if response.status_code == 200:
+</span></span><span style="display:flex;"><span>             rows = []
+</span></span><span style="display:flex;"><span>             tbody = table.find(&#39;tbody&#39;)
+</span></span><span style="display:flex;"><span>             if tbody is not None:
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">+                row_index = 0
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e"></span>                 for tr in tbody.find_all(&#39;tr&#39;):
+</span></span><span style="display:flex;"><span><span style="color:#f92672">-                    row_data = []
+</span></span></span><span style="display:flex;"><span><span style="color:#f92672">-                    for td in tr.find_all(&#39;td&#39;):
+</span></span></span><span style="display:flex;"><span><span style="color:#f92672">-                        # Find the &lt;a&gt; tag within the &lt;td&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#f92672">-                        a_tag = td.find(&#39;a&#39;)
+</span></span></span><span style="display:flex;"><span><span style="color:#f92672">-                        if a_tag is not None:
+</span></span></span><span style="display:flex;"><span><span style="color:#f92672">-                            url = a_tag.get(&#39;href&#39;, None)  # Use get to avoid KeyError
+</span></span></span><span style="display:flex;"><span><span style="color:#f92672">-                            text = a_tag.text.strip()
+</span></span></span><span style="display:flex;"><span><span style="color:#f92672">-                            row_data.append(url)
+</span></span></span><span style="display:flex;"><span><span style="color:#f92672">-                            row_data.append(text)
+</span></span></span><span style="display:flex;"><span><span style="color:#f92672">-                        else:
+</span></span></span><span style="display:flex;"><span><span style="color:#f92672">-                            row_data.append(td.text.strip())
+</span></span></span><span style="display:flex;"><span><span style="color:#f92672">-                    rows.append(row_data[3:5])
+</span></span></span><span style="display:flex;"><span><span style="color:#f92672"></span><span style="color:#a6e22e">+                    if row_index % 2 == 1:
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">+                        row_data = []
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">+                        for td in tr.find_all(&#39;td&#39;):
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">+                            # Find the &lt;a&gt; tag within the &lt;td&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">+                            a_tag = td.find(&#39;a&#39;)
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">+                            if a_tag is not None:
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">+                                url = a_tag.get(&#39;href&#39;, None)  # Use get to avoid KeyError
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">+                                text = a_tag.text.strip()
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">+                                row_data.append(url)
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">+                                row_data.append(text)
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">+                            else:
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">+                                row_data.append(td.text.strip())
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">+                        rows.append(row_data[3:5])
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">+                    row_index += 1
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e"></span>             else:
+</span></span><span style="display:flex;"><span>                 print(&#34;Tbody not found in the table.&#34;)
+</span></span></code></pre></div><p>Output</p>
+<pre tabindex="0"><code>/v2/catalog/catalogitem.page?P=3005&amp;name=Brick%201%20x%201&amp;category=%5BBrick%5D,Brick 1 x 1
+/v2/catalog/catalogitem.page?P=3004&amp;name=Brick%201%20x%202&amp;category=%5BBrick%5D,Brick 1 x 2
+/v2/catalog/catalogitem.page?P=3622&amp;name=Brick%201%20x%203&amp;category=%5BBrick%5D,Brick 1 x 3
+/v2/catalog/catalogitem.page?P=3010&amp;name=Brick%201%20x%204&amp;category=%5BBrick%5D,Brick 1 x 4
+/v2/catalog/catalogitem.page?P=3009&amp;name=Brick%201%20x%206&amp;category=%5BBrick%5D,Brick 1 x 6
+/v2/catalog/catalogitem.page?P=3008&amp;name=Brick%201%20x%208&amp;category=%5BBrick%5D,Brick 1 x 8
+/v2/catalog/catalogitem.page?P=3003&amp;name=Brick%202%20x%202&amp;category=%5BBrick%5D,Brick 2 x 2
+/v2/catalog/catalogitem.page?P=3002&amp;name=Brick%202%20x%203&amp;category=%5BBrick%5D,Brick 2 x 3
+/v2/catalog/catalogitem.page?P=3001&amp;name=Brick%202%20x%204&amp;category=%5BBrick%5D,Brick 2 x 4
+/v2/catalog/catalogitem.page?P=2456&amp;name=Brick%202%20x%206&amp;category=%5BBrick%5D,Brick 2 x 6
+/v2/catalog/catalogitem.page?P=3007&amp;name=Brick%202%20x%208&amp;category=%5BBrick%5D,Brick 2 x 8
+/v2/catalog/catalogitem.page?P=2356&amp;name=Brick%204%20x%206&amp;category=%5BBrick%5D,Brick 4 x 6
+/v2/catalog/catalogitem.page?P=4201&amp;name=Brick%208%20x%208&amp;category=%5BBrick%5D,Brick 8 x 8
+/v2/catalog/catalogitem.page?P=6111&amp;name=Brick%201%20x%2010&amp;category=%5BBrick%5D,Brick 1 x 10
+/v2/catalog/catalogitem.page?P=6112&amp;name=Brick%201%20x%2012&amp;category=%5BBrick%5D,Brick 1 x 12
+/v2/catalog/catalogitem.page?P=2465&amp;name=Brick%201%20x%2016&amp;category=%5BBrick%5D,Brick 1 x 16
+...
+</code></pre><p>Oh, that looks much better!</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: center"></th>
+          <th style="text-align: center"></th>
+          <th style="text-align: center"></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center"><a href="../question12">⇦ question 12</a></td>
+          <td style="text-align: center"><a href="../../dataharvest24/main">Index</a></td>
+          <td style="text-align: center"><a href="../question14">question 14 ⇨ </a></td>
+      </tr>
+  </tbody>
+</table>
+
+</content>
+<p>
+  
+</p>
+
+  </main>
+  <footer>
+
+
+© Vangelis Katsikaros / 
+Made with <a href="https://github.com/janraasch/hugo-bearblog/">Hugo ʕ•ᴥ•ʔ Bear</a>
+</footer>
+
+    
+</body>
+
+</html>

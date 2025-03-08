@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Question 6 | Vangelis Katsikaros</title>
+<meta name="title" content="Question 6" />
+<meta name="description" content="Question 6
+Hm I now get the error AttributeError: &#39;NoneType&#39; object has no attribute &#39;find_all&#39;
+import requests
+from bs4 import BeautifulSoup
+
+url = &#39;https://vkatsikaros.github.io/dataharvest24-www.github.io/&#39;
+response = requests.get(url)
+
+if response.status_code == 200:
+    soup = BeautifulSoup(response.content, &#39;html.parser&#39;)
+    div = soup.find(&#39;div&#39;, id=&#39;_idItemTableForP&#39;)
+    if div is not None:
+        table = div.find(&#39;table&#39;)
+
+        if table is not None:
+            headers = []
+            thead = table.find(&#39;thead&#39;)
+            if thead is not None:
+                for th in thead.find_all(&#39;th&#39;):
+                    headers.append(th.text.strip())
+            else:
+                print(&#34;Thead not found in the table.&#34;)
+
+            rows = []
+            tbody = table.find(&#39;tbody&#39;)
+            if tbody is not None:
+                for tr in tbody.find_all(&#39;tr&#39;):
+                    cells = [td.text.strip() for td in tr.find_all(&#39;td&#39;)]
+                    rows.append(cells)
+            else:
+                print(&#34;Tbody not found in the table.&#34;)
+
+            if headers:
+                print(&#34;Headers:&#34;, headers)
+            else:
+                print(&#34;No headers found.&#34;)
+                
+            if rows:
+                for row in rows:
+                    print(&#34;Row:&#34;, row)
+            else:
+                print(&#34;No rows found.&#34;)
+        else:
+            print(&#34;Table not found within the div. Check the structure.&#34;)
+    else:
+        print(&#34;Div with id &#39;_idItemTableForP&#39; not found. Check the id.&#34;)
+else:
+    print(&#39;Failed to retrieve the webpage. Status code:&#39;, response.status_code)
+The diff:" />
+<meta name="keywords" content="" />
+
+
+<meta property="og:url" content="https://vkatsikaros.com/dataharvest24/question6/">
+  <meta property="og:site_name" content="Vangelis Katsikaros">
+  <meta property="og:title" content="Question 6">
+  <meta property="og:description" content="Question 6 Hm I now get the error AttributeError: &#39;NoneType&#39; object has no attribute &#39;find_all&#39; import requests from bs4 import BeautifulSoup url = &#39;https://vkatsikaros.github.io/dataharvest24-www.github.io/&#39; response = requests.get(url) if response.status_code == 200: soup = BeautifulSoup(response.content, &#39;html.parser&#39;) div = soup.find(&#39;div&#39;, id=&#39;_idItemTableForP&#39;) if div is not None: table = div.find(&#39;table&#39;) if table is not None: headers = [] thead = table.find(&#39;thead&#39;) if thead is not None: for th in thead.find_all(&#39;th&#39;): headers.append(th.text.strip()) else: print(&#34;Thead not found in the table.&#34;) rows = [] tbody = table.find(&#39;tbody&#39;) if tbody is not None: for tr in tbody.find_all(&#39;tr&#39;): cells = [td.text.strip() for td in tr.find_all(&#39;td&#39;)] rows.append(cells) else: print(&#34;Tbody not found in the table.&#34;) if headers: print(&#34;Headers:&#34;, headers) else: print(&#34;No headers found.&#34;) if rows: for row in rows: print(&#34;Row:&#34;, row) else: print(&#34;No rows found.&#34;) else: print(&#34;Table not found within the div. Check the structure.&#34;) else: print(&#34;Div with id &#39;_idItemTableForP&#39; not found. Check the id.&#34;) else: print(&#39;Failed to retrieve the webpage. Status code:&#39;, response.status_code) The diff:">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="dataharvest24">
+
+
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Question 6">
+  <meta name="twitter:description" content="Question 6 Hm I now get the error AttributeError: &#39;NoneType&#39; object has no attribute &#39;find_all&#39; import requests from bs4 import BeautifulSoup url = &#39;https://vkatsikaros.github.io/dataharvest24-www.github.io/&#39; response = requests.get(url) if response.status_code == 200: soup = BeautifulSoup(response.content, &#39;html.parser&#39;) div = soup.find(&#39;div&#39;, id=&#39;_idItemTableForP&#39;) if div is not None: table = div.find(&#39;table&#39;) if table is not None: headers = [] thead = table.find(&#39;thead&#39;) if thead is not None: for th in thead.find_all(&#39;th&#39;): headers.append(th.text.strip()) else: print(&#34;Thead not found in the table.&#34;) rows = [] tbody = table.find(&#39;tbody&#39;) if tbody is not None: for tr in tbody.find_all(&#39;tr&#39;): cells = [td.text.strip() for td in tr.find_all(&#39;td&#39;)] rows.append(cells) else: print(&#34;Tbody not found in the table.&#34;) if headers: print(&#34;Headers:&#34;, headers) else: print(&#34;No headers found.&#34;) if rows: for row in rows: print(&#34;Row:&#34;, row) else: print(&#34;No rows found.&#34;) else: print(&#34;Table not found within the div. Check the structure.&#34;) else: print(&#34;Div with id &#39;_idItemTableForP&#39; not found. Check the id.&#34;) else: print(&#39;Failed to retrieve the webpage. Status code:&#39;, response.status_code) The diff:">
+
+
+
+
+  <meta itemprop="name" content="Question 6">
+  <meta itemprop="description" content="Question 6 Hm I now get the error AttributeError: &#39;NoneType&#39; object has no attribute &#39;find_all&#39; import requests from bs4 import BeautifulSoup url = &#39;https://vkatsikaros.github.io/dataharvest24-www.github.io/&#39; response = requests.get(url) if response.status_code == 200: soup = BeautifulSoup(response.content, &#39;html.parser&#39;) div = soup.find(&#39;div&#39;, id=&#39;_idItemTableForP&#39;) if div is not None: table = div.find(&#39;table&#39;) if table is not None: headers = [] thead = table.find(&#39;thead&#39;) if thead is not None: for th in thead.find_all(&#39;th&#39;): headers.append(th.text.strip()) else: print(&#34;Thead not found in the table.&#34;) rows = [] tbody = table.find(&#39;tbody&#39;) if tbody is not None: for tr in tbody.find_all(&#39;tr&#39;): cells = [td.text.strip() for td in tr.find_all(&#39;td&#39;)] rows.append(cells) else: print(&#34;Tbody not found in the table.&#34;) if headers: print(&#34;Headers:&#34;, headers) else: print(&#34;No headers found.&#34;) if rows: for row in rows: print(&#34;Row:&#34;, row) else: print(&#34;No rows found.&#34;) else: print(&#34;Table not found within the div. Check the structure.&#34;) else: print(&#34;Div with id &#39;_idItemTableForP&#39; not found. Check the id.&#34;) else: print(&#39;Failed to retrieve the webpage. Status code:&#39;, response.status_code) The diff:">
+  <meta itemprop="wordCount" content="495">
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  <style>
+  body {
+    font-family: Verdana, sans-serif;
+    margin: auto;
+    padding: 20px;
+    max-width: 720px;
+    text-align: left;
+    background-color: #fff;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    color: #444;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  strong,
+  b {
+    color: #222;
+  }
+
+  a {
+    color: #3273dc;
+     
+  }
+
+  .title {
+    text-decoration: none;
+    border: 0;
+  }
+
+  .title span {
+    font-weight: 400;
+  }
+
+  nav a {
+    margin-right: 10px;
+  }
+
+  textarea {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  input {
+    font-size: 16px;
+  }
+
+  content {
+    line-height: 1.6;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  code {
+    padding: 2px 5px;
+    background-color: #f2f2f2;
+  }
+
+  pre code {
+    color: #222;
+    display: block;
+    padding: 20px;
+    white-space: pre-wrap;
+    font-size: 14px;
+    overflow-x: auto;
+  }
+
+  div.highlight pre {
+    background-color: initial;
+    color: initial;
+  }
+
+  div.highlight code {
+    background-color: unset;
+    color: unset;
+  }
+
+  blockquote {
+    border-left: 1px solid #999;
+    color: #222;
+    padding-left: 20px;
+    font-style: italic;
+  }
+
+  footer {
+    color: rgb(181, 181, 181);
+    padding: 25px;
+    text-align: center;
+  }
+
+  footer a {
+    color: rgb(181, 181, 181);
+  }
+
+  .helptext {
+    color: #777;
+    font-size: small;
+  }
+
+  .errorlist {
+    color: #eba613;
+    font-size: small;
+  }
+
+   
+  ul.blog-posts {
+    list-style-type: none;
+    padding: unset;
+  }
+
+  ul.blog-posts li {
+    display: flex;
+  }
+
+  ul.blog-posts li span {
+    flex: 0 0 130px;
+  }
+
+  ul.blog-posts li a:visited {
+    color: #8b6fcb;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body {
+      background-color: #333;
+      color: #ddd;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    strong,
+    b {
+      color: #eee;
+    }
+
+    a {
+      color: #8cc2dd;
+    }
+
+    code {
+      background-color: #777;
+    }
+
+    pre code {
+      color: #ddd;
+    }
+
+    blockquote {
+      color: #ccc;
+    }
+
+    textarea,
+    input {
+      background-color: #252525;
+      color: #ddd;
+    }
+
+    .helptext {
+      color: #aaa;
+    }
+  }
+
+</style>
+
+</head>
+
+<body>
+  <header><a href="/" class="title">
+  <h2>Vangelis Katsikaros</h2>
+</a>
+<nav>
+<a href="/about/">About</a>
+
+<a href="/talks/">Talks</a>
+
+<a href="https://github.com/vkatsikaros">GitHub</a>
+
+<a href="https://vangelisbricks.com/">LEGO</a>
+
+
+</nav>
+</header>
+  <main>
+
+<content>
+  <h2 id="question-6">Question 6</h2>
+<h3 id="hm-i-now-get-the-error-attributeerror-nonetype-object-has-no-attribute-find_all">Hm I now get the error <code>AttributeError: 'NoneType' object has no attribute 'find_all'</code></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> requests
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> bs4 <span style="color:#f92672">import</span> BeautifulSoup
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;https://vkatsikaros.github.io/dataharvest24-www.github.io/&#39;</span>
+</span></span><span style="display:flex;"><span>response <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>get(url)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> response<span style="color:#f92672">.</span>status_code <span style="color:#f92672">==</span> <span style="color:#ae81ff">200</span>:
+</span></span><span style="display:flex;"><span>    soup <span style="color:#f92672">=</span> BeautifulSoup(response<span style="color:#f92672">.</span>content, <span style="color:#e6db74">&#39;html.parser&#39;</span>)
+</span></span><span style="display:flex;"><span>    div <span style="color:#f92672">=</span> soup<span style="color:#f92672">.</span>find(<span style="color:#e6db74">&#39;div&#39;</span>, id<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;_idItemTableForP&#39;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> div <span style="color:#f92672">is</span> <span style="color:#f92672">not</span> <span style="color:#66d9ef">None</span>:
+</span></span><span style="display:flex;"><span>        table <span style="color:#f92672">=</span> div<span style="color:#f92672">.</span>find(<span style="color:#e6db74">&#39;table&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> table <span style="color:#f92672">is</span> <span style="color:#f92672">not</span> <span style="color:#66d9ef">None</span>:
+</span></span><span style="display:flex;"><span>            headers <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>            thead <span style="color:#f92672">=</span> table<span style="color:#f92672">.</span>find(<span style="color:#e6db74">&#39;thead&#39;</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> thead <span style="color:#f92672">is</span> <span style="color:#f92672">not</span> <span style="color:#66d9ef">None</span>:
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">for</span> th <span style="color:#f92672">in</span> thead<span style="color:#f92672">.</span>find_all(<span style="color:#e6db74">&#39;th&#39;</span>):
+</span></span><span style="display:flex;"><span>                    headers<span style="color:#f92672">.</span>append(th<span style="color:#f92672">.</span>text<span style="color:#f92672">.</span>strip())
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>                print(<span style="color:#e6db74">&#34;Thead not found in the table.&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            rows <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>            tbody <span style="color:#f92672">=</span> table<span style="color:#f92672">.</span>find(<span style="color:#e6db74">&#39;tbody&#39;</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> tbody <span style="color:#f92672">is</span> <span style="color:#f92672">not</span> <span style="color:#66d9ef">None</span>:
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">for</span> tr <span style="color:#f92672">in</span> tbody<span style="color:#f92672">.</span>find_all(<span style="color:#e6db74">&#39;tr&#39;</span>):
+</span></span><span style="display:flex;"><span>                    cells <span style="color:#f92672">=</span> [td<span style="color:#f92672">.</span>text<span style="color:#f92672">.</span>strip() <span style="color:#66d9ef">for</span> td <span style="color:#f92672">in</span> tr<span style="color:#f92672">.</span>find_all(<span style="color:#e6db74">&#39;td&#39;</span>)]
+</span></span><span style="display:flex;"><span>                    rows<span style="color:#f92672">.</span>append(cells)
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>                print(<span style="color:#e6db74">&#34;Tbody not found in the table.&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> headers:
+</span></span><span style="display:flex;"><span>                print(<span style="color:#e6db74">&#34;Headers:&#34;</span>, headers)
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>                print(<span style="color:#e6db74">&#34;No headers found.&#34;</span>)
+</span></span><span style="display:flex;"><span>                
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> rows:
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">for</span> row <span style="color:#f92672">in</span> rows:
+</span></span><span style="display:flex;"><span>                    print(<span style="color:#e6db74">&#34;Row:&#34;</span>, row)
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>                print(<span style="color:#e6db74">&#34;No rows found.&#34;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>            print(<span style="color:#e6db74">&#34;Table not found within the div. Check the structure.&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">&#34;Div with id &#39;_idItemTableForP&#39; not found. Check the id.&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#39;Failed to retrieve the webpage. Status code:&#39;</span>, response<span style="color:#f92672">.</span>status_code)
+</span></span></code></pre></div><p>The diff:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-diff" data-lang="diff"><span style="display:flex;"><span> if response.status_code == 200:
+</span></span><span style="display:flex;"><span>     soup = BeautifulSoup(response.content, &#39;html.parser&#39;)
+</span></span><span style="display:flex;"><span>     div = soup.find(&#39;div&#39;, id=&#39;_idItemTableForP&#39;)
+</span></span><span style="display:flex;"><span><span style="color:#f92672">-
+</span></span></span><span style="display:flex;"><span><span style="color:#f92672"></span>     if div is not None:
+</span></span><span style="display:flex;"><span>         table = div.find(&#39;table&#39;)
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>         if table is not None:
+</span></span><span style="display:flex;"><span>             headers = []
+</span></span><span style="display:flex;"><span><span style="color:#f92672">-            for th in table.find(&#39;thead&#39;).find_all(&#39;th&#39;):
+</span></span></span><span style="display:flex;"><span><span style="color:#f92672"></span><span style="color:#a6e22e">+            thead = table.find(&#39;thead&#39;)
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">+            if thead is not None:
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">+                for th in thead.find_all(&#39;th&#39;):
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e"></span>                     headers.append(th.text.strip())
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">+            else:
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">+                print(&#34;Thead not found in the table.&#34;)
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e"></span> 
+</span></span><span style="display:flex;"><span>             rows = []
+</span></span><span style="display:flex;"><span><span style="color:#f92672">-            for tr in table.find(&#39;tbody&#39;).find_all(&#39;tr&#39;):
+</span></span></span><span style="display:flex;"><span><span style="color:#f92672"></span><span style="color:#a6e22e">+            tbody = table.find(&#39;tbody&#39;)
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">+            if tbody is not None:
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">+                for tr in tbody.find_all(&#39;tr&#39;):
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e"></span>                     cells = [td.text.strip() for td in tr.find_all(&#39;td&#39;)]
+</span></span><span style="display:flex;"><span>                     rows.append(cells)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">+            else:
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">+                print(&#34;Tbody not found in the table.&#34;)
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e"></span> 
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">+            if headers:
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e"></span>                 print(&#34;Headers:&#34;, headers)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">+            else:
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">+                print(&#34;No headers found.&#34;)
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">+                
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">+            if rows:
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e"></span>                 for row in rows:
+</span></span><span style="display:flex;"><span>                     print(&#34;Row:&#34;, row)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">+            else:
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">+                print(&#34;No rows found.&#34;)
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e"></span>         else:
+</span></span><span style="display:flex;"><span>             print(&#34;Table not found within the div. Check the structure.&#34;)
+</span></span><span style="display:flex;"><span>     else:
+</span></span></code></pre></div><p>Output</p>
+<pre tabindex="0"><code>Thead not found in the table.
+No headers found.
+Row: []
+Row: [&#39;&#39;, &#39;&#39;, &#39;Brick 1 x 1Brick : 3005&#39;, &#39;New&#39;, &#39;15,730,337&#39;, &#39;6,663&#39;, &#39;EUR 0.0001+&#39;]
+Row: [&#39;Used&#39;, &#39;4,921,039&#39;, &#39;87,937&#39;, &#39;EUR 0.0013+&#39;]
+Row: [&#39;&#39;, &#39;&#39;, &#39;Brick 1 x 2Brick : 3004&#39;, &#39;New&#39;, &#39;16,800,431&#39;, &#39;6,779&#39;, &#39;EUR 0.0001+&#39;]
+Row: [&#39;Used&#39;, &#39;7,076,722&#39;, &#39;101,667&#39;, &#39;EUR 0.0009+&#39;]
+Row: [&#39;&#39;, &#39;&#39;, &#39;Brick 1 x 3Brick : 3622&#39;, &#39;New&#39;, &#39;3,867,766&#39;, &#39;5,893&#39;, &#39;EUR 0.0001+&#39;]
+Row: [&#39;Used&#39;, &#39;1,311,312&#39;, &#39;47,376&#39;, &#39;EUR 0.001+&#39;]
+Row: [&#39;&#39;, &#39;&#39;, &#39;Brick 1 x 4Brick : 3010&#39;, &#39;New&#39;, &#39;5,709,796&#39;, &#39;6,332&#39;, &#39;EUR 0.0001+&#39;]
+Row: [&#39;Used&#39;, &#39;1,851,694&#39;, &#39;68,725&#39;, &#39;EUR 0.0027+&#39;]
+Row: [&#39;&#39;, &#39;&#39;, &#39;Brick 1 x 6Brick : 3009&#39;, &#39;New&#39;, &#39;2,288,682&#39;, &#39;5,834&#39;, &#39;EUR 0.0001+&#39;]
+Row: [&#39;Used&#39;, &#39;829,247&#39;, &#39;45,917&#39;, &#39;EUR 0.0013+&#39;]
+Row: [&#39;&#39;, &#39;&#39;, &#39;Brick 1 x 8Brick : 3008&#39;, &#39;New&#39;, &#39;1,101,907&#39;, &#39;5,121&#39;, &#39;EUR 0.0001+&#39;]
+Row: [&#39;Used&#39;, &#39;350,629&#39;, &#39;27,114&#39;, &#39;EUR 0.005+&#39;]
+Row: [&#39;&#39;, &#39;&#39;, &#39;Brick 2 x 2Brick : 3003&#39;, &#39;New&#39;, &#39;6,762,462&#39;, &#39;6,463&#39;, &#39;EUR 0.0001+&#39;]
+Row: [&#39;Used&#39;, &#39;2,931,055&#39;, &#39;78,657&#39;, &#39;EUR 0.0043+&#39;]
+Row: [&#39;&#39;, &#39;&#39;, &#39;Brick 2 x 3Brick : 3002&#39;, &#39;New&#39;, &#39;1,051,070&#39;, &#39;5,635&#39;, &#39;EUR 0.0055+&#39;]
+Row: [&#39;Used&#39;, &#39;799,535&#39;, &#39;39,107&#39;, &#39;EUR 0.0046+&#39;]
+Row: [&#39;&#39;, &#39;&#39;, &#39;Brick 2 x 4Brick : 3001&#39;, &#39;New&#39;, &#39;5,920,355&#39;, &#39;6,239&#39;, &#39;EUR 0.0001+&#39;]
+...
+</code></pre><p>Progress! We see data! But no URL yet.</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: center"></th>
+          <th style="text-align: center"></th>
+          <th style="text-align: center"></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center"><a href="../question5">⇦ question 5</a></td>
+          <td style="text-align: center"><a href="../../dataharvest24/main">Index</a></td>
+          <td style="text-align: center"><a href="../question7">question 7 ⇨ </a></td>
+      </tr>
+  </tbody>
+</table>
+
+</content>
+<p>
+  
+</p>
+
+  </main>
+  <footer>
+
+
+© Vangelis Katsikaros / 
+Made with <a href="https://github.com/janraasch/hugo-bearblog/">Hugo ʕ•ᴥ•ʔ Bear</a>
+</footer>
+
+    
+</body>
+
+</html>

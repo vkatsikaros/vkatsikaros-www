@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Talks | Vangelis Katsikaros</title>
+<meta name="title" content="Talks" />
+<meta name="description" content="Talks
+I give you a URL and you give me back LEGO bricks - OR - How to use an LLM to write your first scraper
+Workshop at Dataharvest 2024, 2024/Jun/01
+Participants will write a simple web scraper in python. An LLM will be used as a coding assistant to write the scraper’s skeleton and help participants overcome obstacles. Participants will also learn that LLMs, can’t be trusted blindly: judgment and domain expertise are needed to navigate the LLM’s answers. After this session participants will be able to implement a very basic web scraper with python; use an LLM as coding assistant and understand its limitations." />
+<meta name="keywords" content="" />
+
+
+<meta property="og:url" content="https://vkatsikaros.com/talks/">
+  <meta property="og:site_name" content="Vangelis Katsikaros">
+  <meta property="og:title" content="Talks">
+  <meta property="og:description" content="Talks I give you a URL and you give me back LEGO bricks - OR - How to use an LLM to write your first scraper Workshop at Dataharvest 2024, 2024/Jun/01
+Participants will write a simple web scraper in python. An LLM will be used as a coding assistant to write the scraper’s skeleton and help participants overcome obstacles. Participants will also learn that LLMs, can’t be trusted blindly: judgment and domain expertise are needed to navigate the LLM’s answers. After this session participants will be able to implement a very basic web scraper with python; use an LLM as coding assistant and understand its limitations.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+
+
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Talks">
+  <meta name="twitter:description" content="Talks I give you a URL and you give me back LEGO bricks - OR - How to use an LLM to write your first scraper Workshop at Dataharvest 2024, 2024/Jun/01
+Participants will write a simple web scraper in python. An LLM will be used as a coding assistant to write the scraper’s skeleton and help participants overcome obstacles. Participants will also learn that LLMs, can’t be trusted blindly: judgment and domain expertise are needed to navigate the LLM’s answers. After this session participants will be able to implement a very basic web scraper with python; use an LLM as coding assistant and understand its limitations.">
+
+
+
+
+  <meta itemprop="name" content="Talks">
+  <meta itemprop="description" content="Talks I give you a URL and you give me back LEGO bricks - OR - How to use an LLM to write your first scraper Workshop at Dataharvest 2024, 2024/Jun/01
+Participants will write a simple web scraper in python. An LLM will be used as a coding assistant to write the scraper’s skeleton and help participants overcome obstacles. Participants will also learn that LLMs, can’t be trusted blindly: judgment and domain expertise are needed to navigate the LLM’s answers. After this session participants will be able to implement a very basic web scraper with python; use an LLM as coding assistant and understand its limitations.">
+  <meta itemprop="wordCount" content="496">
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  <style>
+  body {
+    font-family: Verdana, sans-serif;
+    margin: auto;
+    padding: 20px;
+    max-width: 720px;
+    text-align: left;
+    background-color: #fff;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    color: #444;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  strong,
+  b {
+    color: #222;
+  }
+
+  a {
+    color: #3273dc;
+     
+  }
+
+  .title {
+    text-decoration: none;
+    border: 0;
+  }
+
+  .title span {
+    font-weight: 400;
+  }
+
+  nav a {
+    margin-right: 10px;
+  }
+
+  textarea {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  input {
+    font-size: 16px;
+  }
+
+  content {
+    line-height: 1.6;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  code {
+    padding: 2px 5px;
+    background-color: #f2f2f2;
+  }
+
+  pre code {
+    color: #222;
+    display: block;
+    padding: 20px;
+    white-space: pre-wrap;
+    font-size: 14px;
+    overflow-x: auto;
+  }
+
+  div.highlight pre {
+    background-color: initial;
+    color: initial;
+  }
+
+  div.highlight code {
+    background-color: unset;
+    color: unset;
+  }
+
+  blockquote {
+    border-left: 1px solid #999;
+    color: #222;
+    padding-left: 20px;
+    font-style: italic;
+  }
+
+  footer {
+    color: rgb(181, 181, 181);
+    padding: 25px;
+    text-align: center;
+  }
+
+  footer a {
+    color: rgb(181, 181, 181);
+  }
+
+  .helptext {
+    color: #777;
+    font-size: small;
+  }
+
+  .errorlist {
+    color: #eba613;
+    font-size: small;
+  }
+
+   
+  ul.blog-posts {
+    list-style-type: none;
+    padding: unset;
+  }
+
+  ul.blog-posts li {
+    display: flex;
+  }
+
+  ul.blog-posts li span {
+    flex: 0 0 130px;
+  }
+
+  ul.blog-posts li a:visited {
+    color: #8b6fcb;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body {
+      background-color: #333;
+      color: #ddd;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    strong,
+    b {
+      color: #eee;
+    }
+
+    a {
+      color: #8cc2dd;
+    }
+
+    code {
+      background-color: #777;
+    }
+
+    pre code {
+      color: #ddd;
+    }
+
+    blockquote {
+      color: #ccc;
+    }
+
+    textarea,
+    input {
+      background-color: #252525;
+      color: #ddd;
+    }
+
+    .helptext {
+      color: #aaa;
+    }
+  }
+
+</style>
+
+</head>
+
+<body>
+  <header><a href="/" class="title">
+  <h2>Vangelis Katsikaros</h2>
+</a>
+<nav>
+<a href="/about/">About</a>
+
+<a href="/talks/">Talks</a>
+
+<a href="https://github.com/vkatsikaros">GitHub</a>
+
+<a href="https://vangelisbricks.com/">LEGO</a>
+
+
+</nav>
+</header>
+  <main>
+
+<content>
+  <h2 id="talks">Talks</h2>
+<h3 id="i-give-you-a-url-and-you-give-me-back-lego-bricks---or---how-to-use-an-llm-to-write-your-first-scraper">I give you a URL and you give me back LEGO bricks - OR - How to use an LLM to write your first scraper</h3>
+<p>Workshop at <a href="https://dataharvest.eu">Dataharvest 2024</a>, 2024/Jun/01</p>
+<p>Participants will write a simple web scraper in python. An LLM will be used as a coding assistant to write the scraper’s skeleton and help participants overcome obstacles. Participants will also learn that LLMs, can’t be trusted blindly: judgment and domain expertise are needed to navigate the LLM’s answers. After this session participants will be able to implement a very basic web scraper with python; use an LLM as coding assistant and understand its limitations.</p>
+<p>No coding skills are required. (Participants should be comfortable copy-pasting python code even if they don&rsquo;t understand 100% what it&rsquo;s doing). A very basic (even if abstract) understanding of what a web scraper does will help the participants follow the workshop flow. We will be using Google Collab (a web tool) to write and execute python; no additional software is needed on your computer.</p>
+<p><a href="../dataharvest24/main/">Workshop material</a></p>
+<h3 id="information-technology--the-job-market">Information technology &amp; the job market</h3>
+<p>Invited lecture that reached ~510 students in 9 Computer Science university departments and 1 career day.</p>
+<p><img src="it-job-market-placeholder.jpg" alt="Information technology &amp; the job market placeh older"></p>
+<h4 id="abstract">Abstract</h4>
+<blockquote>
+<p>The job market is not transparent. What does a computer science student need to know to be prepared for their first career choices? Salary trends will be analysed, both generally and specifically for the information technology sector. Useful steps that could be performed during studies will be presented. Finally, the &ldquo;first job&rdquo; job hunt will be discussed, in an effort to make the process a bit less stressful. The speaker will be happy if students get exposed to a couple of ideas that will be useful for their future careers.</p></blockquote>
+<blockquote>
+<p>(Greek) Η αγορά εργασίας είναι αδιαφανής. Τί πρέπει να γνωρίζει και πώς μπορεί να προετοιμαστεί ένας φοιτητής/τρια πληροφορικής για τις πρώτες επαγγελματικές επιλογές; Θα αναλυθούν μισθολογικές τάσεις στην αγορά εργασίας, τόσο γενικά όσο ειδικά για την πληροφορική. Επίσης θα παρουσιαστούν χρήσιμα βήματα που μπορούν γίνουν κατά την διάρκεια των πανεπιστημιακών σπουδών. Τέλος θα συζητηθεί η αναζήτηση της &ldquo;πρώτης δουλειάς&rdquo; ώστε η διαδικασία να γίνει λιγότερο αγχωτική. Ο ομιλητής θα είναι χαρούμενος αν οι φοιτητές/τριες ακούσουν ιδέες που θα φανούν χρήσιμες στην μετέπειτα επαγγελματική τους σταδιοδρομία.</p></blockquote>
+<h4 id="lectures">Lectures</h4>
+<ul>
+<li>International Hellenic University, Dept. of Information and Electronic Engineering, Argyris Koureas, 2024/May, <a href="./slides/2024%2005%20-%20%CE%94%CE%B9%CE%B5%CE%B8%CE%BD%CE%AD%CF%82%20%CE%A0%CE%B1%CE%BD%CE%B5%CF%80%CE%B9%CF%83%CF%84%CE%AE%CE%BC%CE%B9%CE%BF%20-%20Information%20technology%20&amp;%20the%20job%20market.pdf">slides</a></li>
+</ul>
+<ul>
+<li>Technical University of Crete, School of Electrical &amp; Computer Engineering, Nikos Giatrakos, <a href="https://www.ece.tuc.gr/el/anakoinoseis/item/agora-ergasias-stin-technologia-tis-pliroforiasit-triti-10-oktobrioy-2023">2023/Oct</a>, <a href="./slides/2023%2010%20-%20%CE%A0%CE%BF%CE%BB%CF%85%CF%84%CE%B5%CF%87%CE%BD%CE%B5%CE%AF%CE%BF%20%CE%9A%CF%81%CE%AE%CF%84%CE%B7%CF%82%20-%20Information%20technology%20&amp;%20the%20job%20market.pdf">slides</a>, <a href="https://www.youtube.com/watch?v=H643bQKrNMM">video</a></li>
+</ul>
+<ul>
+<li>Hellenic Open University, Dept. of Informatics, <a href="https://www.eap.gr/2022/05/30/5i-omadiki-synedria-grafeio-diasyndesis-eap/">Careers office</a>, 2022/Jun, <a href="./slides/2022%2006%20-%20%CE%91%CE%BD%CE%BF%CE%B9%CE%BA%CF%84%CF%8C%20%CE%A0%CE%B1%CE%BD%20-%20Information%20technology%20&amp;%20the%20job%20market.pdf">slides</a></li>
+</ul>
+<ul>
+<li>University of the Peloponnese, <a href="https://www.ece.uop.gr/announcement/19-20-ma%ce%90ou-imera-erevniti-michanikou-kai-imera-karieras-apo-to-tmima-immy/">Researcher and Engineer Career Day</a>, 2022/May, <a href="./slides/2022%2005%20-%20%CE%97%CE%BC%CE%AD%CF%81%CE%B1%20%CE%95%CF%81%CE%B5%CF%85%CE%BD%CE%B7%CF%84%CE%AE%20%CE%9C%CE%B7%CF%87%CE%B1%CE%BD%CE%B9%CE%BA%CE%BF%CF%8D%20-%20%CE%97%CE%9C%CE%9C%CE%A5%20%CE%A0%CE%B1%CE%BD%CE%B5%CF%80%CE%B9%CF%83%CF%84%CE%AE%CE%BC%CE%B9%CE%BF%20%CE%A0%CE%B5%CE%BB%CE%BF%CF%80%CE%BF%CE%BD%CE%BD%CE%AE%CF%83%CE%BF%CF%85%20-%20Information%20technology%20&amp;%20the%20job%20market.pdf">slides</a></li>
+</ul>
+<ul>
+<li>University of Aegean, Dept. of Information and Communication Systems Engineering, Yannis Charalabidis, 2022/Apr, <a href="./slides/2022%2004%20-%20%CE%A0%CE%B1%CE%BD%20%CE%91%CE%B9%CE%B3%CE%B1%CE%AF%CE%BF%CF%85%20-%20Information%20technology%20&amp;%20the%20job%20market.pdf">slides</a></li>
+</ul>
+<ul>
+<li>University of the Peloponnese, <a href="https://dih.esdalab.ece.uop.gr/news/2022/webinar-information-technology-the-job-market-february">ESDA LAB</a>, 2022/Feb, <a href="./slides/2022%2002%20-%20%CE%A0%CE%B1%CE%BD%20%CE%A0%CE%B5%CE%BB%CE%BF%CF%80%CE%BF%CE%BD%CE%BD%CE%AE%CF%83%CE%BF%CF%85%20-%20Information%20technology%20&amp;%20the%20job%20market.pdf">slides</a></li>
+</ul>
+<ul>
+<li>Athens University of Economics and Business, Dept. of Management Science and Technology, Diomidis Spinellis, 2022/Jan, <a href="./slides/2022%2001%20-%20%CE%9F%CE%B9%CE%BA%20%CE%A0%CE%B1%CE%BD%20%CE%91%CE%B8%CE%B7%CE%BD%CF%8E%CE%BD%20-%20Information%20technology%20&amp;%20the%20job%20market.pdf">slides</a></li>
+</ul>
+<ul>
+<li>Aristotle University of Thessaloniki, Dept. of Informatics, Georgios Keramidas, 2021/Nov, <a href="./slides/2021%2012%20-%20%CE%91%CF%81%CE%B9%CF%83%CF%84%CE%BF%CF%84%CE%AD%CE%BB%CE%B5%CE%B9%CE%BF%20%CE%98%CE%B5%CF%83%CE%BA%CE%B7%CF%82%20-%20Information%20technology%20&amp;%20the%20job%20market.pdf">slides</a></li>
+</ul>
+<ul>
+<li>University of Thessaly, Dept. of Electrical &amp; Computer Engineering, Dimitrios Katsaros, 2021/Apr, <a href="./slides/2021%2004%20-%20%CE%A0%CE%B1%CE%BD%20%CE%98%CE%B5%CF%83%CF%83%CE%B1%CE%BB%CE%AF%CE%B1%CF%82%20-%20Information%20technology%20&amp;%20the%20job%20market.pdf">slides</a></li>
+</ul>
+<ul>
+<li>University of Piraeus, Dept. of Informatics, Yannis Theodoridis - <a href="https://www.datastories.org/events/information-technology-trends-and-the-job-market/">DataStories Lab</a>, 2020/Nov, <a href="./slides/2020%2011%20-%20%CE%A0%CE%B1%CE%BD%20%CE%A0%CE%B5%CE%B9%CF%81%CE%B1%CE%B9%CE%AC%20-%20Information%20technology%20trends%20and%20the%20job%20market.pdf">slides</a>, <a href="https://www.youtube.com/watch?v=rhfYPF35tLc">video</a></li>
+</ul>
+
+</content>
+<p>
+  
+</p>
+
+  </main>
+  <footer>
+
+
+© Vangelis Katsikaros / 
+Made with <a href="https://github.com/janraasch/hugo-bearblog/">Hugo ʕ•ᴥ•ʔ Bear</a>
+</footer>
+
+    
+</body>
+
+</html>

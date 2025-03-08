@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Vangelis Katsikaros</title>
+<meta name="title" content="Vangelis Katsikaros" />
+<meta name="description" content="Dataharvest 2024
+I give you a URL and you give me back LEGO bricks - OR - How to use an LLM to write your first scraper
+Workshop at Dataharvest 2024, 2024/Jun/01
+
+Participants will write a simple web scraper in python. A Large Language Models (LLM) will be used as a coding assistant to write the scraper’s skeleton and help participants overcome obstacles. Participants will also learn that LLMs, can’t be trusted blindly: judgment and domain expertise are needed to navigate the LLM’s answers. After this session participants will be able to implement a very basic web scraper with python; use an LLM as coding assistant and understand its limitations." />
+<meta name="keywords" content="" />
+
+
+<meta property="og:url" content="https://vkatsikaros.com/dataharvest24/main/">
+  <meta property="og:site_name" content="Vangelis Katsikaros">
+  <meta property="og:title" content="Vangelis Katsikaros">
+  <meta property="og:description" content="Dataharvest 2024 I give you a URL and you give me back LEGO bricks - OR - How to use an LLM to write your first scraper Workshop at Dataharvest 2024, 2024/Jun/01
+Participants will write a simple web scraper in python. A Large Language Models (LLM) will be used as a coding assistant to write the scraper’s skeleton and help participants overcome obstacles. Participants will also learn that LLMs, can’t be trusted blindly: judgment and domain expertise are needed to navigate the LLM’s answers. After this session participants will be able to implement a very basic web scraper with python; use an LLM as coding assistant and understand its limitations.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="dataharvest24">
+
+
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Vangelis Katsikaros">
+  <meta name="twitter:description" content="Dataharvest 2024 I give you a URL and you give me back LEGO bricks - OR - How to use an LLM to write your first scraper Workshop at Dataharvest 2024, 2024/Jun/01
+Participants will write a simple web scraper in python. A Large Language Models (LLM) will be used as a coding assistant to write the scraper’s skeleton and help participants overcome obstacles. Participants will also learn that LLMs, can’t be trusted blindly: judgment and domain expertise are needed to navigate the LLM’s answers. After this session participants will be able to implement a very basic web scraper with python; use an LLM as coding assistant and understand its limitations.">
+
+
+
+
+  <meta itemprop="name" content="Vangelis Katsikaros">
+  <meta itemprop="description" content="Dataharvest 2024 I give you a URL and you give me back LEGO bricks - OR - How to use an LLM to write your first scraper Workshop at Dataharvest 2024, 2024/Jun/01
+Participants will write a simple web scraper in python. A Large Language Models (LLM) will be used as a coding assistant to write the scraper’s skeleton and help participants overcome obstacles. Participants will also learn that LLMs, can’t be trusted blindly: judgment and domain expertise are needed to navigate the LLM’s answers. After this session participants will be able to implement a very basic web scraper with python; use an LLM as coding assistant and understand its limitations.">
+  <meta itemprop="wordCount" content="295">
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  <style>
+  body {
+    font-family: Verdana, sans-serif;
+    margin: auto;
+    padding: 20px;
+    max-width: 720px;
+    text-align: left;
+    background-color: #fff;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    color: #444;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  strong,
+  b {
+    color: #222;
+  }
+
+  a {
+    color: #3273dc;
+     
+  }
+
+  .title {
+    text-decoration: none;
+    border: 0;
+  }
+
+  .title span {
+    font-weight: 400;
+  }
+
+  nav a {
+    margin-right: 10px;
+  }
+
+  textarea {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  input {
+    font-size: 16px;
+  }
+
+  content {
+    line-height: 1.6;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  code {
+    padding: 2px 5px;
+    background-color: #f2f2f2;
+  }
+
+  pre code {
+    color: #222;
+    display: block;
+    padding: 20px;
+    white-space: pre-wrap;
+    font-size: 14px;
+    overflow-x: auto;
+  }
+
+  div.highlight pre {
+    background-color: initial;
+    color: initial;
+  }
+
+  div.highlight code {
+    background-color: unset;
+    color: unset;
+  }
+
+  blockquote {
+    border-left: 1px solid #999;
+    color: #222;
+    padding-left: 20px;
+    font-style: italic;
+  }
+
+  footer {
+    color: rgb(181, 181, 181);
+    padding: 25px;
+    text-align: center;
+  }
+
+  footer a {
+    color: rgb(181, 181, 181);
+  }
+
+  .helptext {
+    color: #777;
+    font-size: small;
+  }
+
+  .errorlist {
+    color: #eba613;
+    font-size: small;
+  }
+
+   
+  ul.blog-posts {
+    list-style-type: none;
+    padding: unset;
+  }
+
+  ul.blog-posts li {
+    display: flex;
+  }
+
+  ul.blog-posts li span {
+    flex: 0 0 130px;
+  }
+
+  ul.blog-posts li a:visited {
+    color: #8b6fcb;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body {
+      background-color: #333;
+      color: #ddd;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    strong,
+    b {
+      color: #eee;
+    }
+
+    a {
+      color: #8cc2dd;
+    }
+
+    code {
+      background-color: #777;
+    }
+
+    pre code {
+      color: #ddd;
+    }
+
+    blockquote {
+      color: #ccc;
+    }
+
+    textarea,
+    input {
+      background-color: #252525;
+      color: #ddd;
+    }
+
+    .helptext {
+      color: #aaa;
+    }
+  }
+
+</style>
+
+</head>
+
+<body>
+  <header><a href="/" class="title">
+  <h2>Vangelis Katsikaros</h2>
+</a>
+<nav>
+<a href="/about/">About</a>
+
+<a href="/talks/">Talks</a>
+
+<a href="https://github.com/vkatsikaros">GitHub</a>
+
+<a href="https://vangelisbricks.com/">LEGO</a>
+
+
+</nav>
+</header>
+  <main>
+
+<content>
+  <h2 id="dataharvest-2024">Dataharvest 2024</h2>
+<h3 id="i-give-you-a-url-and-you-give-me-back-lego-bricks---or---how-to-use-an-llm-to-write-your-first-scraper">I give you a URL and you give me back LEGO bricks - OR - How to use an LLM to write your first scraper</h3>
+<p>Workshop at <a href="https://dataharvest.eu">Dataharvest 2024</a>, 2024/Jun/01</p>
+<blockquote>
+<p>Participants will write a simple web scraper in python. A Large Language Models (LLM) will be used as a coding assistant to write the scraper’s skeleton and help participants overcome obstacles. Participants will also learn that LLMs, can’t be trusted blindly: judgment and domain expertise are needed to navigate the LLM’s answers. After this session participants will be able to implement a very basic web scraper with python; use an LLM as coding assistant and understand its limitations.</p>
+<p>No coding skills are required. (Participants should be comfortable copy-pasting python code even if they don&rsquo;t understand 100% what it&rsquo;s doing). A very basic (even if abstract) understanding of what a web scraper does will help the participants follow the workshop flow. We will be using Google Collab (a web tool) to write and execute python; no additional software is needed on your computer.</p></blockquote>
+<h4 id="part-1">Part 1</h4>
+<p>We discussed LLMs briefly. Why they are interesting, what they are good at, what they are bad at, and why they are interesting as a teaching assistant for programming.</p>
+<h4 id="part-2">Part 2</h4>
+<p>Setup you development environment</p>
+<p>If you want to avoid installing python locally:</p>
+<ul>
+<li>Go to <a href="https://colab.research.google.com/">Google Colab</a></li>
+<li>Sign in with your Google account. This is required to run the code.</li>
+</ul>
+<p>Or install python locally</p>
+<h4 id="part-3">Part 3</h4>
+<p>Open in a separate tab <a href="https://vkatsikaros.github.io/dataharvest24-www.github.io/">the page we want to scrape</a> with Chrome. It&rsquo;s a list of LEGO bricks. The page is static and runs no Javascript.</p>
+<h4 id="part-4">Part 4</h4>
+<p>Let&rsquo;s go to the <a href="../../dataharvest24/question1">first question</a>!</p>
+<h4 id="appendix">Appendix</h4>
+<p>The saved full <a href="https://chatgpt.com/share/6e0795d4-8a14-489f-a15f-7ae2ea991990">ChatGPT log</a></p>
+<p>The <a href="../../dataharvest24/assets/I%20give%20you%20a%20URL%20and%20you%20give%20me%20back%20LEGO%20bricks.pdf">slides</a> of the presentation.</p>
+<p>Versions used:</p>
+<ul>
+<li>
+<p>ChatGPT: GPT‑4o (Free)</p>
+</li>
+<li>
+<p>Chrome: 124</p>
+</li>
+</ul>
+
+</content>
+<p>
+  
+</p>
+
+  </main>
+  <footer>
+
+
+© Vangelis Katsikaros / 
+Made with <a href="https://github.com/janraasch/hugo-bearblog/">Hugo ʕ•ᴥ•ʔ Bear</a>
+</footer>
+
+    
+</body>
+
+</html>
